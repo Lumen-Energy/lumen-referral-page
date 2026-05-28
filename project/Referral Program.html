@@ -2234,24 +2234,30 @@
     targets.forEach(t => obs.observe(t));
   })();
 
-  // FAQ: ensure only one open at a time (optional UX — keep multi-open for power readers)
-  // Leaving native <details> behavior; comment block kept intentionally.
-
-  // Form tabs + validation + success
+  // Form tabs + validation + HubSpot submission
   (function () {
-    const partnerForm = document.getElementById('partnerForm');
-    const dealForm    = document.getElementById('dealForm');
-    const success     = document.getElementById('formSuccess');
-    const tabs        = document.querySelectorAll('.form-tab');
-    const hint        = document.getElementById('formHint');
+    // ── HubSpot config ───────────────────────────────────────────────────────
+    // Portal: 20832032
+    // TODO: Create two forms in HubSpot (Marketing → Forms → Create form → Embedded),
+    //       then paste each form’s GUID below.
+    var HS_PORTAL_ID    = '20832032';
+    var HS_PARTNER_GUID = 'TODO_PARTNER_FORM_GUID'; // "Join the network" form
+    var HS_DEAL_GUID    = 'TODO_DEAL_FORM_GUID';    // "Submit a specific deal" form
+    // ───────────────────────────────────────────────────────────────────────────
+
+    const partnerForm  = document.getElementById('partnerForm');
+    const dealForm     = document.getElementById('dealForm');
+    const success      = document.getElementById('formSuccess');
+    const tabs         = document.querySelectorAll('.form-tab');
+    const hint         = document.getElementById('formHint');
     const successTitle = document.getElementById('successTitle');
     const successBody  = document.getElementById('successBody');
 
     if (!partnerForm || !dealForm) return;
 
     const HINTS = {
-      join: 'Most people start here \u2014 we\u2019ll set up an ongoing relationship so you can send things our way as they come up. <a href="#" data-form-tab="deal" style="color: var(--yellow); border-bottom: 1px solid currentColor;">Already have a specific building in mind?</a>',
-      deal: 'You\u2019ve got something specific in mind. Tell us what you know \u2014 we\u2019ll come back with a yes, a no, or a question. <a href="#" data-form-tab="join" style="color: var(--yellow); border-bottom: 1px solid currentColor;">Or join the network instead.</a>'
+      join: 'Most people start here — we’ll set up an ongoing relationship so you can send things our way as they come up. <a href="#" data-form-tab="deal" style="color: var(--yellow); border-bottom: 1px solid currentColor;">Already have a specific building in mind?</a>',
+      deal: 'You’ve got something specific in mind. Tell us what you know — we’ll come back with a yes, a no, or a question. <a href="#" data-form-tab="join" style="color: var(--yellow); border-bottom: 1px solid currentColor;">Or join the network instead.</a>'
     };
 
     function switchTab(name) {
@@ -2264,7 +2270,6 @@
       dealForm.classList.toggle('hidden', name !== 'deal');
       success.classList.remove('active');
       if (hint) hint.innerHTML = HINTS[name] || '';
-      // Re-bind any in-hint switch links
       bindSwitchLinks();
     }
 
@@ -2276,13 +2281,11 @@
           e.preventDefault();
           const target = el.dataset.formTab;
           switchTab(target);
-          // Scroll the form into view without scrollIntoView()
           const sect = document.getElementById('join');
           if (sect) {
             const rect = sect.getBoundingClientRect();
             window.scrollTo({ top: window.pageYOffset + rect.top - 40, behavior: 'smooth' });
           }
-          // Focus first input of new form
           setTimeout(() => {
             const f = target === 'deal' ? dealForm : partnerForm;
             f.querySelector('input, select, textarea')?.focus({ preventScroll: true });
@@ -2294,7 +2297,9 @@
     tabs.forEach(t => t.addEventListener('click', () => switchTab(t.dataset.tab)));
     bindSwitchLinks();
 
+    // ── Helpers ─────────────────────────────────────────────────────────────────────
     function isEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+
     function setError(field, hasErr) {
       const wrap = field.closest ? field.closest('.field') : null;
       if (wrap) wrap.classList.toggle('error', hasErr);
@@ -2312,7 +2317,32 @@
       return ok;
     }
 
-    // Partner form submit
+    function splitName(full) {
+      const parts = full.trim().split(/\s+/);
+      return { first: parts[0] || '', last: parts.slice(1).join(' ') };
+    }
+
+    function setSubmitting(form, on) {
+      const btn = form.querySelector('[type="submit"]');
+      if (!btn) return;
+      btn.disabled = on;
+      btn.style.opacity = on ? '0.55' : '';
+    }
+
+    // POST to HubSpot Forms API v3
+    function submitToHubSpot(portalId, formGuid, fields) {
+      var url = 'https://api.hsforms.com/submissions/v3/integration/submit/' + portalId + '/' + formGuid;
+      return fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fields: fields,
+          context: { pageUri: window.location.href, pageName: document.title }
+        })
+      });
+    }
+
+    // ── Partner form (“Join the network”) ────────────────────────────────────────────────────────────────
     partnerForm.addEventListener('submit', function (e) {
       e.preventDefault();
       let ok = true;
@@ -2320,22 +2350,46 @@
       ok &= validateRequired(partnerForm.querySelector('#p-role'));
       ok &= validateEmail(partnerForm.querySelector('#p-email'));
 
-      // require at least one advisor type
-      const advisors = partnerForm.querySelectorAll('input[name="advisor"]:checked');
+      const advisors     = partnerForm.querySelectorAll('input[name="advisor"]:checked');
       const advisorGroup = partnerForm.querySelector('input[name="advisor"]').closest('.field');
-      const advisorOk = advisors.length > 0;
+      const advisorOk    = advisors.length > 0;
       advisorGroup.classList.toggle('error', !advisorOk);
       ok &= advisorOk;
 
       if (!ok) {
-        const firstErr = partnerForm.querySelector('.field.error');
-        firstErr?.querySelector('input,select,textarea')?.focus();
+        partnerForm.querySelector('.field.error')?.querySelector('input,select,textarea')?.focus();
         return;
       }
-      showSuccess('join');
+
+      const name     = splitName(partnerForm.querySelector('#p-name').value);
+      const role     = partnerForm.querySelector('#p-role').value.trim();
+      const comma    = role.indexOf(',');
+      const jobTitle = comma > -1 ? role.slice(0, comma).trim() : role;
+      const company  = comma > -1 ? role.slice(comma + 1).trim() : '';
+      const markets  = [...partnerForm.querySelectorAll('input[name="market"]:checked')].map(c => c.value).join(';');
+      const advTypes = [...advisors].map(c => c.value).join(';');
+      const freq     = partnerForm.querySelector('input[name="frequency"]:checked')?.value || '';
+
+      const fields = [
+        { name: 'firstname',           value: name.first },
+        { name: 'lastname',            value: name.last },
+        { name: 'email',               value: partnerForm.querySelector('#p-email').value.trim() },
+        { name: 'phone',               value: partnerForm.querySelector('#p-phone').value.trim() },
+        { name: 'jobtitle',            value: jobTitle },
+        { name: 'company',             value: company },
+        { name: 'advisor_type',        value: advTypes },
+        { name: 'markets_of_interest', value: markets },
+        { name: 'referral_frequency',  value: freq },
+        { name: 'message',             value: partnerForm.querySelector('#p-notes').value.trim() },
+      ].filter(f => f.value !== '');
+
+      setSubmitting(partnerForm, true);
+      submitToHubSpot(HS_PORTAL_ID, HS_PARTNER_GUID, fields)
+        .catch(() => console.warn('[Lumen] HubSpot partner form submission failed.'))
+        .finally(() => { setSubmitting(partnerForm, false); showSuccess('join'); });
     });
 
-    // Deal form submit
+    // ── Deal form (“Submit a specific deal”) ──────────────────────────────────────────────────────────────────
     dealForm.addEventListener('submit', function (e) {
       e.preventDefault();
       let ok = true;
@@ -2343,47 +2397,64 @@
       ok &= validateRequired(dealForm.querySelector('#d-company'));
       ok &= validateEmail(dealForm.querySelector('#d-email'));
 
-      // require intro pledge
-      const pledge = dealForm.querySelector('#d-intro');
+      const pledge      = dealForm.querySelector('#d-intro');
       const pledgeField = pledge.closest('.field');
-      const pledgeOk = pledge.checked;
+      const pledgeOk    = pledge.checked;
       pledgeField.classList.toggle('error', !pledgeOk);
       ok &= pledgeOk;
 
       if (!ok) {
-        const firstErr = dealForm.querySelector('.field.error');
-        firstErr?.querySelector('input,select,textarea')?.focus();
+        dealForm.querySelector('.field.error')?.querySelector('input,select,textarea')?.focus();
         return;
       }
-      showSuccess('deal');
+
+      const name = splitName(dealForm.querySelector('#d-name').value);
+
+      const fields = [
+        { name: 'firstname',         value: name.first },
+        { name: 'lastname',          value: name.last },
+        { name: 'email',             value: dealForm.querySelector('#d-email').value.trim() },
+        { name: 'phone',             value: dealForm.querySelector('#d-phone').value.trim() },
+        { name: 'company',           value: dealForm.querySelector('#d-company').value.trim() },
+        { name: 'referral_type',     value: dealForm.querySelector('input[name="type"]:checked')?.value || '' },
+        { name: 'building_address',  value: dealForm.querySelector('#d-address').value.trim() },
+        { name: 'contact_name_role', value: dealForm.querySelector('#d-contactName').value.trim() },
+        { name: 'hear_about_lumen',  value: dealForm.querySelector('#d-hearAbout').value },
+        { name: 'message',           value: dealForm.querySelector('#d-notes').value.trim() },
+      ].filter(f => f.value !== '');
+
+      setSubmitting(dealForm, true);
+      submitToHubSpot(HS_PORTAL_ID, HS_DEAL_GUID, fields)
+        .catch(() => console.warn('[Lumen] HubSpot deal form submission failed.'))
+        .finally(() => { setSubmitting(dealForm, false); showSuccess('deal'); });
     });
 
+    // ── Success state ───────────────────────────────────────────────────────────────────────
     function showSuccess(kind) {
       partnerForm.classList.add('hidden');
       dealForm.classList.add('hidden');
-      // hide tabs + hint
       document.querySelector('.form-tabs').style.display = 'none';
       if (hint) hint.style.display = 'none';
 
       if (kind === 'join') {
         successTitle.textContent = 'Welcome to the network.';
-        successBody.innerHTML = 'You&rsquo;re in. Someone from our partnerships team will reach out within the next two business days with a personal intro, a few one-pagers you can hand to clients, and a direct line to use whenever you want to talk through a building or relationship.';
+        successBody.innerHTML = 'You’re in. Someone from our partnerships team will reach out within the next two business days with a personal intro, a few one-pagers you can hand to clients, and a direct line to use whenever you want to talk through a building or relationship.';
       } else {
-        successTitle.textContent = 'Got it. We&rsquo;ll be in touch.';
-        successBody.innerHTML = 'Your referral is in front of our partnerships team. You&rsquo;ll hear back from a real person at <strong>hello@lumen.energy</strong> within the next two business days &mdash; sooner if the opportunity is time-sensitive.';
+        successTitle.textContent = 'Got it. We’ll be in touch.';
+        successBody.innerHTML = 'Your referral is in front of our partnerships team. You’ll hear back from a real person at <strong>hello@lumen.energy</strong> within the next two business days — sooner if the opportunity is time-sensitive.';
       }
 
       success.classList.add('active');
       try { success.focus({ preventScroll: true }); } catch (_) {}
       const rect = success.getBoundingClientRect();
-      const top = window.pageYOffset + rect.top - (window.innerHeight / 2 - rect.height / 2);
+      const top  = window.pageYOffset + rect.top - (window.innerHeight / 2 - rect.height / 2);
       window.scrollTo({ top, behavior: 'smooth' });
     }
 
-    // Clear errors on input
+    // ── Clear errors on input ──────────────────────────────────────────────────────────────────────
     [partnerForm, dealForm].forEach(f => {
       f.querySelectorAll('input, textarea, select').forEach(el => {
-        el.addEventListener('input', () => setError(el, false));
+        el.addEventListener('input',  () => setError(el, false));
         el.addEventListener('change', () => setError(el, false));
       });
     });
