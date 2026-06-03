@@ -160,12 +160,10 @@ export function FormSection() {
         <div className="section-header">
           <div>
             <div className="eyebrow on-dark">
-              07 &nbsp;/&nbsp; Join the network
+              Join the network
             </div>
             <h2 style={{ marginTop: "24px" }}>
-              Tell us who
-              <br />
-              you advise. <em>We&apos;ll take it from there.</em>
+              Ready to start making introductions?
             </h2>
           </div>
           <p className="lead" style={{ color: "rgba(255,255,255,0.72)" }}>
@@ -177,23 +175,13 @@ export function FormSection() {
 
         <div className="form-wrap">
           <aside className="form-aside">
-            <h3>A note from us.</h3>
-            <p>
-              We&apos;ve been on the other side of the table. We know what
-              it&apos;s like to send a tip into a black box and never hear back.
-              We won&apos;t do that to you.
-            </p>
-            <p style={{ marginTop: "14px" }}>
-              Every signup gets a real reply from a real person on our
-              partnerships team — usually inside two business days.
-            </p>
 
             <div className="form-aside-divider"></div>
 
             <div className="form-aside-contact">
               <div className="row">
                 <i className="ti ti-mail"></i>
-                <a href="mailto:hello@lumen.energy">hello@lumen.energy</a>
+                <a href="mailto:partners@lumen.energy">partners@lumen.energy</a>
               </div>
             </div>
           </aside>
@@ -632,7 +620,7 @@ export function FormSection() {
                     <>
                       Your referral is in front of our partnerships team.
                       You&apos;ll hear back from a real person at{" "}
-                      <strong>hello@lumen.energy</strong> within the next two
+                      <strong>partners@lumen.energy</strong> within the next two
                       business days — sooner if the opportunity is
                       time-sensitive.
                     </>

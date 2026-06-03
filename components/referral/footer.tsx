@@ -56,7 +56,7 @@ export function Footer() {
             <h5>Connect</h5>
             <ul>
               <li>
-                <a href="mailto:hello@lumen.energy">hello@lumen.energy</a>
+                <a href="mailto:partners@lumen.energy">partners@lumen.energy</a>
               </li>
               <li>
                 <a href="https://linkedin.com/company/lumen-energy">LinkedIn</a>
