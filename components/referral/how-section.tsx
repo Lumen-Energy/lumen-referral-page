@@ -28,7 +28,7 @@ export function HowSection() {
       <div className="container">
         <div className="section-header">
           <div>
-            <div className="eyebrow">04 &nbsp;/&nbsp; How it works</div>
+            <div className="eyebrow">02 &nbsp;/&nbsp; How it works</div>
             <h2 style={{ marginTop: "24px" }}>Three steps.</h2>
           </div>
           <p className="lead">

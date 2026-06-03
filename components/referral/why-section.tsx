@@ -37,7 +37,7 @@ export function WhySection() {
           style={{ gridTemplateColumns: "minmax(0, 0.7fr) minmax(0, 1.3fr)" }}
         >
           <div>
-            <div className="eyebrow">05 &nbsp;/&nbsp; Why Lumen</div>
+            <div className="eyebrow">03 &nbsp;/&nbsp; Why Lumen</div>
             <h2 style={{ marginTop: "24px" }}>A product worth referring.</h2>
           </div>
           <p className="lead" style={{ maxWidth: "none" }}>
