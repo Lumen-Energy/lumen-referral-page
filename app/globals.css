@@ -582,6 +582,11 @@ section {
   color: var(--black);
 }
 
+@media (min-width: 881px) {
+  .hero-two-col {
+    grid-template-columns: 1.4fr 1fr !important;
+  }
+}
 @media (max-width: 880px) {
   .hero-grid {
     grid-template-columns: 1fr;
