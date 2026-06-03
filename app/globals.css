@@ -582,6 +582,11 @@ section {
   color: var(--black);
 }
 
+@media (min-width: 881px) {
+  .hero-two-col {
+    grid-template-columns: 1.4fr 1fr !important;
+  }
+}
 @media (max-width: 880px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -595,7 +600,7 @@ section {
    ============================================================ */
 .personas-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0;
   border-top: 1px solid var(--rule);
 }
@@ -612,7 +617,7 @@ section {
 .persona:hover {
   background: var(--sand-100);
 }
-.persona:nth-child(3n) {
+.persona:nth-child(4n) {
   border-right: none;
 }
 .persona-num {
@@ -649,7 +654,7 @@ section {
   .personas-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .persona:nth-child(3n) {
+  .persona:nth-child(4n) {
     border-right: 1px solid var(--border);
   }
   .persona:nth-child(2n) {
@@ -662,7 +667,7 @@ section {
   }
   .persona,
   .persona:nth-child(2n),
-  .persona:nth-child(3n) {
+  .persona:nth-child(4n) {
     border-right: none;
   }
 }
@@ -949,7 +954,7 @@ section {
    ============================================================ */
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -959,6 +964,7 @@ section {
   padding: 36px 32px 40px;
   display: flex;
   flex-direction: column;
+  color: var(--black);
 }
 .why-num {
   font-family: var(--font-mono);

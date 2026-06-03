@@ -12,20 +12,17 @@ export function Nav() {
             height={18}
             style={{ height: "18px", width: "auto" }}
           />
-          <span className="tag">Referral Program</span>
+          <span className="tag">Partner Network</span>
         </a>
         <div className="nav-links">
           <a href="#who" className="nav-link-text">
             Who it&apos;s for
           </a>
-          <a href="#criteria" className="nav-link-text">
-            What we look for
-          </a>
-          <a href="#markets" className="nav-link-text">
-            Markets
-          </a>
           <a href="#how" className="nav-link-text">
             How it works
+          </a>
+          <a href="#why" className="nav-link-text">
+            Why Lumen
           </a>
           <a href="#faq" className="nav-link-text">
             FAQ

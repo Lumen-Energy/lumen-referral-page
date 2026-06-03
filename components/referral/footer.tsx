@@ -13,7 +13,6 @@ export function Footer() {
               height={22}
               style={{ height: "22px", width: "auto" }}
             />
-            <p>Cut carbon profitably.</p>
           </div>
           <div className="footer-col">
             <h5>Program</h5>
@@ -39,16 +38,16 @@ export function Footer() {
             <h5>Lumen</h5>
             <ul>
               <li>
-                <a href="https://lumen.energy">Main site</a>
+                <a href="https://getlumen.com">Home</a>
               </li>
               <li>
-                <a href="https://lumen.energy/about">About</a>
+                <a href="https://getlumen.com/about">About</a>
               </li>
               <li>
-                <a href="https://lumen.energy/careers">Careers</a>
+                <a href="https://getlumen.com/careers">Careers</a>
               </li>
               <li>
-                <a href="https://lumen.energy/press">Press</a>
+                <a href="https://getlumen.com/press">Press</a>
               </li>
             </ul>
           </div>
@@ -56,13 +55,10 @@ export function Footer() {
             <h5>Connect</h5>
             <ul>
               <li>
-                <a href="mailto:hello@lumen.energy">hello@lumen.energy</a>
+                <a href="mailto:partners@lumen.energy">partners@lumen.energy</a>
               </li>
               <li>
                 <a href="https://linkedin.com/company/lumen-energy">LinkedIn</a>
-              </li>
-              <li>
-                <a href="https://x.com/lumen_energy">X / Twitter</a>
               </li>
             </ul>
           </div>

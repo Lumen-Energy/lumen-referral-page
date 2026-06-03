@@ -2,10 +2,6 @@ import {
   Nav,
   Hero,
   WhoSection,
-  ProofBand,
-  CriteriaSection,
-  StatsBand,
-  MarketsSection,
   HowSection,
   WhySection,
   FAQSection,
@@ -20,10 +16,6 @@ export default function ReferralPage() {
       <Nav />
       <Hero />
       <WhoSection />
-      <ProofBand />
-      <CriteriaSection />
-      <StatsBand />
-      <MarketsSection />
       <HowSection />
       <WhySection />
       <FAQSection />

@@ -143,25 +143,17 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="section-pad-sm">
+    <section id="faq" className="section-pad-sm" style={{ background: "var(--sand-100)" }}>
       <div className="container">
         <div className="section-header">
           <div>
-            <div className="eyebrow">06 &nbsp;/&nbsp; Frequently asked</div>
-            <h2 style={{ marginTop: "24px" }}>
-              Common questions,
-              <br />
-              honest answers.
-            </h2>
-          </div>
-          <p className="lead">
-            Still unsure?{" "}
-            <a href="#join" style={{ borderBottom: "1px solid currentColor" }}>
-              Join the network
-            </a>{" "}
-            — the form is short, no commitment, and we&apos;ll get back to you
-            within two business days.
+            <div className="eyebrow">04 &nbsp;/&nbsp; Frequently asked questions</div>
+                      <p className="lead">
+            Still have questions?{" "}
+            Reach out at partners@lumen.energy and we'll get back to you as soon as possible.
           </p>
+          </div>
+
         </div>
 
         <div className="faq-list">
