@@ -3,21 +3,18 @@ const steps = [
     num: "01",
     title: "Make the introduction.",
     desc: "A warm intro to your client — an email loop-in, a quick three-way call, whatever's natural. We don't want a name we have to cold-chase. The intro is the whole job on your end.",
-    chips: ["Email loop-in", "3-way call", "Whatever's natural"],
     highlight: false,
   },
   {
     num: "02",
     title: "We run the process. Your client picks the best offer.",
     desc: "Feasibility, financial modeling, and a competitive bid from developers we've vetted. We bring the offers to your client; they pick the one that works. You stay in the loop or step away.",
-    chips: ["Feasibility", "Bid process", "Developer match", "Contract"],
     highlight: false,
   },
   {
     num: "03",
     title: "Project closes. You get paid for the introduction.",
     desc: "Referral fee at financial close — or revenue share for the life of the project on portfolio deals. The structure is agreed in writing before any work starts.",
-    chips: ["Referral at close"],
     highlight: true,
   },
 ];
@@ -29,7 +26,7 @@ export function HowSection() {
         <div className="section-header">
           <div>
             <div className="eyebrow">02 &nbsp;/&nbsp; How it works</div>
-            <h2 style={{ marginTop: "24px" }}>Three steps.</h2>
+            <h2 style={{ marginTop: "24px" }}>Simple by design</h2>
           </div>
           <p className="lead">
             Designed around protecting your client relationship first, and your
@@ -48,16 +45,6 @@ export function HowSection() {
               </div>
               <h3>{s.title}</h3>
               <p>{s.desc}</p>
-              <div className="step-detail">
-                {s.chips.map((chip, i) => (
-                  <span
-                    key={i}
-                    className={`chip ${s.highlight ? "hi" : ""}`}
-                  >
-                    {chip}
-                  </span>
-                ))}
-              </div>
             </article>
           ))}
         </div>
