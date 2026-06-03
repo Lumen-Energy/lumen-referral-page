@@ -1,30 +1,4 @@
 {
-  "rewrites": [
-    {
-      "source": "/assets/:path*",
-      "destination": "/project/assets/:path*"
-    },
-    {
-      "source": "/fonts/:path*",
-      "destination": "/project/fonts/:path*"
-    },
-    {
-      "source": "/screenshots/:path*",
-      "destination": "/project/screenshots/:path*"
-    },
-    {
-      "source": "/uploads/:path*",
-      "destination": "/project/uploads/:path*"
-    },
-    {
-      "source": "/projects/:path*",
-      "destination": "/project/:path*"
-    },
-    {
-      "source": "/",
-      "destination": "/project/Referral Program.html"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
