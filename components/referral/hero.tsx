@@ -27,6 +27,20 @@ export function Hero() {
               <p className="hero-sub" style={{ color: "#ffffff", marginTop: 0 }}>
                 Lumen works with commercial real estate advisors, roofing companies, facilities services providers, and ESG consultants who have trusted relationships with building owners. Refer a qualified client and earn a commission — no cap, no complexity.
               </p>
+              <div className="hero-metrics" style={{ display: "flex", gap: "2.5rem", marginTop: "1.5rem", marginBottom: "1.5rem" }}>
+                <div>
+                  <div style={{ color: "var(--yellow)", fontSize: "2rem", fontWeight: 600, lineHeight: 1.1 }}>10%</div>
+                  <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.05em", textTransform: "uppercase", marginTop: "0.25rem" }}>Referral Fee</div>
+                </div>
+                <div>
+                  <div style={{ color: "var(--yellow)", fontSize: "2rem", fontWeight: 600, lineHeight: 1.1 }}>12 mo.</div>
+                  <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.05em", textTransform: "uppercase", marginTop: "0.25rem" }}>Earning Window</div>
+                </div>
+                <div>
+                  <div style={{ color: "var(--yellow)", fontSize: "2rem", fontWeight: 600, lineHeight: 1.1 }}>45 days</div>
+                  <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.05em", textTransform: "uppercase", marginTop: "0.25rem" }}>Payment Terms</div>
+                </div>
+              </div>
               <div className="hero-ctas">
                 <a href="#join" className="btn btn-primary">
                   Become a partner
