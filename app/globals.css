@@ -600,7 +600,7 @@ section {
    ============================================================ */
 .personas-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0;
   border-top: 1px solid var(--rule);
 }
@@ -617,7 +617,7 @@ section {
 .persona:hover {
   background: var(--sand-100);
 }
-.persona:nth-child(3n) {
+.persona:nth-child(4n) {
   border-right: none;
 }
 .persona-num {
@@ -654,7 +654,7 @@ section {
   .personas-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .persona:nth-child(3n) {
+  .persona:nth-child(4n) {
     border-right: 1px solid var(--border);
   }
   .persona:nth-child(2n) {
@@ -667,7 +667,7 @@ section {
   }
   .persona,
   .persona:nth-child(2n),
-  .persona:nth-child(3n) {
+  .persona:nth-child(4n) {
     border-right: none;
   }
 }

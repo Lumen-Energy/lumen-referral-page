@@ -1,24 +1,20 @@
 const personas = [
   {
-    num: "01",
     icon: "ti-building-skyscraper",
     title: "CRE Advisory & Brokerage",
     desc: "Identify solar-ready properties during acquisition due diligence, listings, or portfolio reviews. Introduce Lumen at the moment building owners are making major decisions.",
   },
   {
-    num: "02",
     icon: "ti-tools",
     title: "Roofing Companies",
     desc: "Flag solar-ready roofs during inspections or project scoping. Your assessment is often what convinces an owner the roof is ready — a perfect moment to introduce Lumen.",
   },
   {
-    num: "03",
     icon: "ti-snowflake",
     title: "Snow Removal & Facilities",
     desc: "Leverage recurring site access and trusted vendor relationships to introduce Lumen to property managers. Your on-the-ground presence gives you an edge no cold caller has.",
   },
   {
-    num: "04",
     icon: "ti-leaf",
     title: "ESG Consultants",
     desc: "Present Lumen to clients with active sustainability mandates or net-zero commitments. Solar is often the highest-ROI action available — make it part of your roadmap.",
@@ -48,8 +44,7 @@ export function WhoSection() {
       <div className="container">
         <div className="personas-grid">
           {personas.map((p) => (
-            <div key={p.num} className="persona">
-              <div className="persona-num">&mdash; {p.num}</div>
+            <div className="persona">
               <div className="persona-icon">
                 <i className={`ti ${p.icon}`}></i>
               </div>
