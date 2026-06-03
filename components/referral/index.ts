@@ -1,0 +1,13 @@
+export { Nav } from "./nav";
+export { Hero } from "./hero";
+export { WhoSection } from "./who-section";
+export { ProofBand } from "./proof-band";
+export { CriteriaSection } from "./criteria-section";
+export { StatsBand } from "./stats-band";
+export { MarketsSection } from "./markets-section";
+export { HowSection } from "./how-section";
+export { WhySection } from "./why-section";
+export { FAQSection } from "./faq-section";
+export { FormSection } from "./form-section";
+export { Footer } from "./footer";
+export { ScrollReveal } from "./scroll-reveal";
