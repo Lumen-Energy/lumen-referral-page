@@ -24,7 +24,7 @@ const steps = [
 
 export function HowSection() {
   return (
-    <section id="how" className="section-pad-sm" style={{ paddingBottom: 0, background: "var(--paper)" }}>
+    <section id="how" className="section-pad-sm" style={{ paddingBottom: 0, background: "#ffffff" }}>
       <div className="container">
         <div className="section-header">
           <div>
