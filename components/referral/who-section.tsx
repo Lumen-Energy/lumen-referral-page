@@ -2,38 +2,26 @@ const personas = [
   {
     num: "01",
     icon: "ti-building-skyscraper",
-    title: "CRE brokers",
-    desc: "Add value to landlord and tenant clients without lifting a finger.",
+    title: "CRE Advisory & Brokerage",
+    desc: "Identify solar-ready properties during acquisition due diligence, listings, or portfolio reviews. Introduce Lumen at the moment building owners are making major decisions.",
   },
   {
     num: "02",
     icon: "ti-tools",
-    title: "Roofing contractors",
-    desc: "Pair roof work with a solar revenue stream for your customer.",
+    title: "Roofing Companies",
+    desc: "Flag solar-ready roofs during inspections or project scoping. Your assessment is often what convinces an owner the roof is ready — a perfect moment to introduce Lumen.",
   },
   {
     num: "03",
-    icon: "ti-gavel",
-    title: "Real estate & energy attorneys",
-    desc: "Bring a credible solar partner to clients exploring on-site generation.",
+    icon: "ti-snowflake",
+    title: "Snow Removal & Facilities",
+    desc: "Leverage recurring site access and trusted vendor relationships to introduce Lumen to property managers. Your on-the-ground presence gives you an edge no cold caller has.",
   },
   {
     num: "04",
-    icon: "ti-key",
-    title: "Property managers",
-    desc: "Turn underutilized roofs into NOI without changing a thing operationally.",
-  },
-  {
-    num: "05",
-    icon: "ti-presentation",
-    title: "Sustainability & energy advisors",
-    desc: "Plug Lumen in when your clients need a real bid process, not another deck.",
-  },
-  {
-    num: "06",
-    icon: "ti-users",
-    title: "Anyone with the right relationship",
-    desc: "If you know a building owner or a large tenant, we want to talk.",
+    icon: "ti-leaf",
+    title: "ESG Consultants",
+    desc: "Present Lumen to clients with active sustainability mandates or net-zero commitments. Solar is often the highest-ROI action available — make it part of your roadmap.",
   },
 ];
 
@@ -45,15 +33,14 @@ export function WhoSection() {
           <div>
             <div className="eyebrow">01 &nbsp;/&nbsp; Who it&apos;s for</div>
             <h2 style={{ marginTop: "24px" }}>
-              If you advise people who own or
+              Built for businesses
               <br />
-              occupy buildings, this is for you.
+              that know buildings.
             </h2>
           </div>
           <p className="lead">
-            We work with people who already have the trust. You bring the
-            relationship; we bring the developer bench, the bid process, and the
-            deal structuring. Most of our best referrals come from one of these:
+            If your work puts you in front of commercial property owners and
+            managers, you&apos;re a natural fit for the Lumen Partner Network.
           </p>
         </div>
       </div>

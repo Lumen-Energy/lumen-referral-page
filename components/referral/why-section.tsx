@@ -47,11 +47,11 @@ export function WhySection() {
         >
           <div>
             <div className="eyebrow">05 &nbsp;/&nbsp; Why Lumen</div>
-            <h2 style={{ marginTop: "24px" }}>Built for C&amp;I.</h2>
+            <h2 style={{ marginTop: "24px" }}>A product worth referring.</h2>
           </div>
           <p className="lead" style={{ maxWidth: "none" }}>
-            We chase rooftops, retrofits, and the messy landlord–tenant deals
-            other people walk away from. That&apos;s the whole point.
+            Referral programs only create value when the underlying product
+            delivers. Here&apos;s what your clients are getting.
           </p>
         </div>
       </div>

@@ -169,9 +169,9 @@ export function FormSection() {
             </h2>
           </div>
           <p className="lead" style={{ color: "rgba(255,255,255,0.72)" }}>
-            Two minutes. No NDA. We&apos;ll set you up with a partner contact,
-            give you the one-pagers your clients need, and get out of your way
-            until you have someone for us.
+            Joining the Lumen Partner Network takes a single email and a
+            one-page agreement. There&apos;s no exclusivity, no minimum
+            commitment, and no out-of-pocket cost.
           </p>
         </div>
 

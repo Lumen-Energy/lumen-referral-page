@@ -5,7 +5,7 @@ export function Hero() {
         <div className="hero-grid">
           <div>
             <div className="eyebrow hero-eyebrow">
-              Lumen Energy &nbsp;/&nbsp; Referral Network
+              Lumen Energy &nbsp;/&nbsp; Partner Network
             </div>
             <h1>
               Become the
@@ -29,7 +29,7 @@ export function Hero() {
               about solar.
             </h1>
             <p className="hero-sub" style={{ color: "#ffffff" }}>
-              Join Lumen&apos;s referral network and become a trusted resource
+              Join Lumen&apos;s partner network and become a trusted resource
               the next time a client asks about putting solar on a roof.{" "}
               <strong style={{ color: "#ffffff" }}>
                 You make the warm introduction
