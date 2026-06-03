@@ -5,6 +5,22 @@
       "destination": "/project/:path*"
     },
     {
+      "source": "/projects/assets/:path*",
+      "destination": "/project/assets/:path*"
+    },
+    {
+      "source": "/projects/fonts/:path*",
+      "destination": "/project/fonts/:path*"
+    },
+    {
+      "source": "/projects/screenshots/:path*",
+      "destination": "/project/screenshots/:path*"
+    },
+    {
+      "source": "/projects/uploads/:path*",
+      "destination": "/project/uploads/:path*"
+    },
+    {
       "source": "/",
       "destination": "/project/Referral Program.html"
     }
