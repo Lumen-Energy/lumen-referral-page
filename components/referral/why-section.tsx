@@ -1,24 +1,15 @@
 const cards = [
   {
-    num: "01 / Focus",
+    num: "01 / Software-Driven",
     title: (
       <>
-        A marketplace <em>purpose-built</em> for commercial &amp; industrial.
+        <em>Software-driven,</em> not contractor-driven.
       </>
     ),
-    desc: "Every line of code, every model, every conversation is about C&I rooftops. We don't cover utility-scale or residential. That focus is why projects close here that stall elsewhere.",
+    desc: "Lumen uses proprietary data and automation to identify viable projects, model economics, and match buildings with the right developers. Your clients get faster answers and better outcomes.",
   },
   {
-    num: "02 / Hard projects",
-    title: (
-      <>
-        We <em>structure the deals others walk away from.</em>
-      </>
-    ),
-    desc: "Complex landlord–tenant splits. Brownfields. Retrofits. Mixed-use portfolios. The structures that take three meetings to explain — those are the ones we know how to match with the right developer.",
-  },
-  {
-    num: "03 / Marketplace",
+    num: "02 / Marketplace",
     title: (
       <>
         A curated bench. <em>Real options.</em>
@@ -27,7 +18,7 @@ const cards = [
     desc: "Lumen is the marketplace where institutional developers bid for C&I projects. Your client sees real, competing offers from people who actually want the deal — not a cold list of names.",
   },
   {
-    num: "04 / Partnership",
+    num: "03 / Partnership",
     title: (
       <>
         We treat referrers as <em>long-term partners.</em>
