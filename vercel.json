@@ -1,0 +1,23 @@
+{
+  "rewrites": [
+    {
+      "source": "/projects/:path*",
+      "destination": "/project/:path*"
+    },
+    {
+      "source": "/",
+      "destination": "/project/Referral Program.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
