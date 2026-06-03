@@ -30,7 +30,7 @@ const cards = [
 
 export function WhySection() {
   return (
-    <section className="section-pad" style={{ background: "#1a1a1a", color: "#ffffff" }}>
+    <section id="why" className="section-pad" style={{ background: "#1a1a1a", color: "#ffffff" }}>
       <div className="container">
         <div
           className="section-header"

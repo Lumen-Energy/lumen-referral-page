@@ -21,6 +21,9 @@ export function Nav() {
           <a href="#how" className="nav-link-text">
             How it works
           </a>
+          <a href="#why" className="nav-link-text">
+            Why Lumen
+          </a>
           <a href="#faq" className="nav-link-text">
             FAQ
           </a>
