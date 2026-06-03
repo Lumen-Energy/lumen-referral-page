@@ -964,6 +964,7 @@ section {
   padding: 36px 32px 40px;
   display: flex;
   flex-direction: column;
+  color: var(--black);
 }
 .why-num {
   font-family: var(--font-mono);
