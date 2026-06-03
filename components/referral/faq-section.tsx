@@ -147,12 +147,7 @@ export function FAQSection() {
       <div className="container">
         <div className="section-header">
           <div>
-            <div className="eyebrow">06 &nbsp;/&nbsp; Frequently asked</div>
-            <h2 style={{ marginTop: "24px" }}>
-              Common questions,
-              <br />
-              honest answers.
-            </h2>
+            <div className="eyebrow">04 &nbsp;/&nbsp; Frequently asked</div>
           </div>
           <p className="lead">
             Still unsure?{" "}
