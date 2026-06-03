@@ -1,24 +1,24 @@
 {
   "rewrites": [
     {
-      "source": "/projects/:path*",
-      "destination": "/project/:path*"
-    },
-    {
-      "source": "/projects/assets/:path*",
+      "source": "/assets/:path*",
       "destination": "/project/assets/:path*"
     },
     {
-      "source": "/projects/fonts/:path*",
+      "source": "/fonts/:path*",
       "destination": "/project/fonts/:path*"
     },
     {
-      "source": "/projects/screenshots/:path*",
+      "source": "/screenshots/:path*",
       "destination": "/project/screenshots/:path*"
     },
     {
-      "source": "/projects/uploads/:path*",
+      "source": "/uploads/:path*",
       "destination": "/project/uploads/:path*"
+    },
+    {
+      "source": "/projects/:path*",
+      "destination": "/project/:path*"
     },
     {
       "source": "/",
