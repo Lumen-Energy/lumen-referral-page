@@ -23,7 +23,7 @@ const personas = [
 
 export function WhoSection() {
   return (
-    <section id="who" className="section-pad">
+    <section id="who" className="section-pad" style={{ background: "var(--sand-100)" }}>
       <div className="container">
         <div className="section-header">
           <div>

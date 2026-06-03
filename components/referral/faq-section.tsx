@@ -143,7 +143,7 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="section-pad-sm">
+    <section id="faq" className="section-pad-sm" style={{ background: "var(--sand-100)" }}>
       <div className="container">
         <div className="section-header">
           <div>
