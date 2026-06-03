@@ -147,16 +147,13 @@ export function FAQSection() {
       <div className="container">
         <div className="section-header">
           <div>
-            <div className="eyebrow">04 &nbsp;/&nbsp; Frequently asked</div>
-          </div>
-          <p className="lead">
-            Still unsure?{" "}
-            <a href="#join" style={{ borderBottom: "1px solid currentColor" }}>
-              Join the network
-            </a>{" "}
-            — the form is short, no commitment, and we&apos;ll get back to you
-            within two business days.
+            <div className="eyebrow">04 &nbsp;/&nbsp; Frequently asked questions</div>
+                      <p className="lead">
+            Still have questions?{" "}
+            Reach out at partners@lumen.energy and we'll get back to you as soon as possible.
           </p>
+          </div>
+
         </div>
 
         <div className="faq-list">
