@@ -148,12 +148,11 @@ export function FAQSection() {
         <div className="section-header">
           <div>
             <div className="eyebrow">04 &nbsp;/&nbsp; Frequently asked questions</div>
-                      <p className="lead">
-            Still have questions?{" "}
-            Reach out at partners@lumen.energy and we'll get back to you as soon as possible.
-          </p>
           </div>
-
+          <p className="lead">
+            Still have questions?{" "}
+            Reach out at partners@lumen.energy and we&apos;ll get back to you as soon as possible.
+          </p>
         </div>
 
         <div className="faq-list">

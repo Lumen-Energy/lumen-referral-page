@@ -32,15 +32,12 @@ export function WhySection() {
   return (
     <section id="why" className="section-pad" style={{ background: "#1a1a1a", color: "#ffffff" }}>
       <div className="container">
-        <div
-          className="section-header"
-          style={{ gridTemplateColumns: "minmax(0, 0.7fr) minmax(0, 1.3fr)" }}
-        >
+        <div className="section-header">
           <div>
             <div className="eyebrow on-dark">03 &nbsp;/&nbsp; Why Lumen</div>
             <h2 style={{ marginTop: "24px" }}>A product worth referring.</h2>
           </div>
-          <p className="lead" style={{ maxWidth: "none", color: "rgba(255,255,255,0.8)" }}>
+          <p className="lead" style={{ color: "rgba(255,255,255,0.8)" }}>
             Referral programs only create value when the underlying product
             delivers. Here&apos;s what your clients are getting.
           </p>
