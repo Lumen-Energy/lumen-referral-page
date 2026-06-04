@@ -2,20 +2,19 @@ const steps = [
   {
     num: "01",
     title: "Make the introduction.",
-    desc: "A warm intro to your client — an email loop-in, a quick three-way call, whatever's natural. We don't want a name we have to cold-chase. The intro is the whole job on your end.",
-    highlight: false,
+    desc: "A warm intro to your client — an email loop-in, a quick three-way call, whatever's natural, and we'll take it from there",
   },
   {
-    num: "02",
-    title: "We run the process. Your client picks the best offer.",
-    desc: "Feasibility, financial modeling, and a competitive bid from developers we've vetted. We bring the offers to your client; they pick the one that works. You stay in the loop or step away.",
-    highlight: false,
+    title: "Lumen vets the opportunity.",
+    desc: "Before we kick-off development, we'll ensure the prospect is new, and then we'll work to make sure the project fits our marketplace.",
   },
   {
-    num: "03",
-    title: "Project closes. You get paid for the introduction.",
-    desc: "Referral fee at financial close — or revenue share for the life of the project on portfolio deals. The structure is agreed in writing before any work starts.",
-    highlight: true,
+    title: "Lumen brings your client the best offer.",
+    desc: "We will conduct feasibility, financial modeling, and run a competitive bidding process to bring your client the best offers. They pick the one that works.",
+  },
+  {
+    title: "Project closes. You get paid.",
+    desc: "When a deal is signed, 10% of every net dollar Lumen collects will be shared back with you.",
   },
 ];
 
@@ -29,18 +28,17 @@ export function HowSection() {
             <h2 style={{ marginTop: "24px" }}>Simple by design</h2>
           </div>
           <p className="lead">
-            Designed around protecting your client relationship first, and your
-            time second.
+            Designed to protect your client relationship and make getting solar easy.
           </p>
         </div>
       </div>
 
       <div className="container">
         <div className="steps">
-          {steps.map((s) => (
-            <article key={s.num} className="step">
+          {steps.map((s, index) => (
+            <article className="step">
               <div className="step-num">
-                {s.num}
+                {index}
                 <sup>step</sup>
               </div>
               <h3>{s.title}</h3>
