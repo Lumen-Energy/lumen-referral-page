@@ -150,8 +150,7 @@ export function FAQSection() {
             <div className="eyebrow">04 &nbsp;/&nbsp; Frequently asked questions</div>
           </div>
           <p className="lead">
-            Still have questions?{" "}
-            Reach out at partners@lumen.energy and we&apos;ll get back to you as soon as possible.
+            If you don&apos;t see an answer to your question below, reach out at partners@lumen.energy and we&apos;ll get back to you as soon as possible.
           </p>
         </div>
 
