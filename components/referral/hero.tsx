@@ -9,7 +9,7 @@ export function Hero() {
           <div className="hero-two-col" style={{ display: "grid", gridTemplateColumns: "1fr", gap: "2.5rem", alignItems: "start" }}>
             <div>
               <h1>
-                Earn revenue by connecting buildings to
+                Connect buildings to
                 {" "}
                 <em
                   style={{
@@ -25,7 +25,7 @@ export function Hero() {
             </div>
             <div className="hero-right-col">
               <p className="hero-sub" style={{ color: "#ffffff", marginTop: 0 }}>
-                Lumen works with commercial real estate advisors, roofing companies, facilities services providers, and ESG consultants who have trusted relationships with building owners. Refer a qualified client and earn a commission — no cap, no complexity.
+                Refer building owners to Lumen's solar marketplace and earn commission on every successful deal. No overhead, no complexity, no cap.
               </p>
               <div className="hero-metrics" style={{ display: "flex", gap: "2.5rem", marginTop: "1.5rem", marginBottom: "1.5rem" }}>
                 <div>
@@ -35,10 +35,6 @@ export function Hero() {
                 <div>
                   <div style={{ color: "var(--yellow)", fontSize: "2.5rem", fontFamily: "var(--font-display)", fontWeight: 300, lineHeight: 1, letterSpacing: "-0.025em" }}>12 mo.</div>
                   <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.05em", textTransform: "uppercase", marginTop: "0.25rem" }}>Earning Window</div>
-                </div>
-                <div>
-                  <div style={{ color: "var(--yellow)", fontSize: "2.5rem", fontFamily: "var(--font-display)", fontWeight: 300, lineHeight: 1, letterSpacing: "-0.025em" }}>45 days</div>
-                  <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.05em", textTransform: "uppercase", marginTop: "0.25rem" }}>Payment Terms</div>
                 </div>
               </div>
               <div className="hero-ctas">
