@@ -29,9 +29,6 @@ export function Footer() {
             <h5>Company</h5>
             <ul>
               <li>
-                <a href="">Home</a>
-              </li>
-              <li>
                 <a href="https://getlumen.com/about">About</a>
               </li>
               <li>
