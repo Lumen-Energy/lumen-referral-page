@@ -38,7 +38,7 @@ export function HowSection() {
           {steps.map((s, index) => (
             <article className="step">
               <div className="step-num">
-                {index}
+                {index + 1}
                 <sup>step</sup>
               </div>
               <h3>{s.title}</h3>
