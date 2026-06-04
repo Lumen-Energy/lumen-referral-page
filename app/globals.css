@@ -253,6 +253,7 @@ p {
   border: 1px solid var(--black);
   transition: background 150ms;
   text-transform: none !important;
+  white-space: nowrap;
 }
 .nav-cta:hover {
   background: var(--yellow-deep);
