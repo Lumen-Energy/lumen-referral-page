@@ -1960,3 +1960,37 @@ form.deal-form.hidden {
     transform: none;
   }
 }
+
+/* ============================================================
+   HubSpot Form Styling
+   ============================================================ */
+.hs-form-frame,
+.hs-form-frame * {
+  font-family: var(--font-sans) !important;
+}
+.hs-form-frame label {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: var(--fg) !important;
+}
+.hs-form-frame input,
+.hs-form-frame textarea,
+.hs-form-frame select {
+  font-family: var(--font-sans) !important;
+  font-size: 16px !important;
+  border-radius: 4px !important;
+}
+.hs-form-frame .hs-button {
+  font-family: var(--font-sans) !important;
+  font-weight: 500 !important;
+  background: var(--yellow) !important;
+  color: var(--black) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 12px 24px !important;
+  cursor: pointer !important;
+  transition: background 150ms ease !important;
+}
+.hs-form-frame .hs-button:hover {
+  background: var(--yellow-deep) !important;
+}
