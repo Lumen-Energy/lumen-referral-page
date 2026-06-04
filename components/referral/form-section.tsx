@@ -51,7 +51,7 @@ export function FormSection() {
             </div>
           </aside>
 
-          <div className="form-stack">
+          <div className="form-stack" style={{ background: "var(--sand-100)", padding: "2rem", borderRadius: "8px" }}>
             <div
               id="hubspot-form-container"
               className="hs-form-frame"
