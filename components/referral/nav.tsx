@@ -28,7 +28,7 @@ export function Nav() {
             FAQ
           </a>
           <a href="#join" className="nav-cta">
-            Join the network
+            Become a partner
           </a>
         </div>
       </div>
