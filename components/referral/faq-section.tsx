@@ -147,8 +147,8 @@ export function FAQSection() {
       <div className="container">
         <div className="section-header">
           <div>
-            <div className="eyebrow">04 &nbsp;/&nbsp; Frequently asked questions</div>
-            <h2 style={{ marginTop: "24px" }}>Common questions.</h2>
+            <div className="eyebrow">04 &nbsp;/&nbsp; FAQs</div>
+            <h2 style={{ marginTop: "24px" }}>Common questions</h2>
           </div>
           <p className="lead">
             If you don&apos;t see an answer to your question below, reach out at <a href="mailto:partners@lumen.energy">partners@lumen.energy</a>.
