@@ -58,7 +58,7 @@ export function Footer() {
             <a href="https://www.youtube.com/@LumenEnergy" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               <i className="ti ti-brand-youtube" style={{ fontSize: "20px" }}></i>
             </a>
-            <a href="https://www.linkedin.com/company/getlumen/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/lumen-energy-inc" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <i className="ti ti-brand-linkedin" style={{ fontSize: "20px" }}></i>
             </a>
           </div>
