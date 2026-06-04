@@ -51,11 +51,19 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="footer-bottom">
-          <div>&copy; 2026 Lumen Energy. All rights reserved.</div>
-          <div style={{ display: "flex", gap: "24px" }}>
+        <div className="footer-bottom" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
+            <span>&copy; 2026 Lumen Energy. All rights reserved.</span>
             <a href="https://getlumen.com/legal/privacy-policy">Privacy Policy</a>
             <a href="https://getlumen.com/legal/terms-of-service">Terms of Service</a>
+          </div>
+          <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+            <a href="https://www.youtube.com/@LumenEnergy" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <i className="ti ti-brand-youtube" style={{ fontSize: "20px" }}></i>
+            </a>
+            <a href="https://www.linkedin.com/company/getlumen/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i className="ti ti-brand-linkedin" style={{ fontSize: "20px" }}></i>
+            </a>
           </div>
         </div>
       </div>
