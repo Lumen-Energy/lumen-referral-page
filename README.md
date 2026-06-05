@@ -1,25 +1,46 @@
-# CODING AGENTS: READ THIS FIRST
+# Lumen Energy Referral Page
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+A Next.js landing page for Lumen Energy's customer referral program.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Overview
 
-## What you should do — IMPORTANT
+This referral program landing page encourages existing Lumen customers to refer commercial real estate decision-makers who can benefit from Lumen's energy solutions.
 
-**Read the chat transcripts first.** There are 2 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+## Tech Stack
 
-**Read `project/Referral Program.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** CSS with custom properties (Lumen design tokens)
+- **Fonts:** ABC Arizona Serif, ABC Pelikan
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+## Project Structure
 
-## About the design files
+```
+app/
+  layout.tsx         # Root layout with fonts and metadata
+  page.tsx           # Main referral page
+  globals.css        # Global styles and CSS variables
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+components/referral/
+  nav.tsx            # Navigation header
+  hero.tsx           # Hero section with headline
+  why-section.tsx    # Why refer section
+  who-section.tsx    # Who to refer section
+  criteria-section.tsx # Referral criteria
+  how-section.tsx    # How it works steps
+  form-section.tsx   # Referral submission form
+  faq-section.tsx    # FAQ accordion
+  footer.tsx         # Site footer
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+public/
+  assets/            # Images (hero, building photos, logo)
+  fonts/             # Custom font files
+```
 
-## Bundle contents
+## Development
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Referral Pages` project files (HTML prototypes, assets, components)
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the site.
