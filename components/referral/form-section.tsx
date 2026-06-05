@@ -35,9 +35,9 @@ export function FormSection() {
           </div>
         </div>
 
-        <div className="form-wrap">
+        <div className="form-wrap" style={{ display: "flex", justifyContent: "center" }}>
 
-          <div className="form-stack" style={{ background: "var(--sand-100)", padding: "2rem", borderRadius: "8px" }}>
+          <div className="form-stack" style={{ background: "var(--sand-100)", padding: "2rem", borderRadius: "8px", width: "100%", maxWidth: "640px" }}>
             <div
               id="hubspot-form-container"
               className="hs-form-frame"
