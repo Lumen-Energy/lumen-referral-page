@@ -33,23 +33,9 @@ export function FormSection() {
               Ready to start making introductions?
             </h2>
           </div>
-          <p className="lead" style={{ color: "rgba(255,255,255,0.72)" }}>
-            Joining the Lumen Partner Network takes a single email and a
-            one-page agreement. There&apos;s no exclusivity, no minimum
-            commitment, and no out-of-pocket cost.
-          </p>
         </div>
 
         <div className="form-wrap">
-          <aside className="form-aside">
-            <div className="form-aside-divider"></div>
-            <div className="form-aside-contact">
-              <div className="row">
-                <i className="ti ti-mail"></i>
-                <a href="mailto:partners@lumen.energy">partners@lumen.energy</a>
-              </div>
-            </div>
-          </aside>
 
           <div className="form-stack" style={{ background: "var(--sand-100)", padding: "2rem", borderRadius: "8px" }}>
             <div
